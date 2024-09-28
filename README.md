@@ -1,2 +1,2 @@
 # port-decider
-Deterministically allocate port numbers to services
+I originally made this to deterministically allocate port numbers to services but it can also be used to generate PINs. Use the "--nopattern" modifier to ensure repeating numbers don't get generated, but the chances are quite unlikely anyway.

@@ -9,8 +9,9 @@ repeats = lambda n:True in [f"{n}".count(f'{d}') > 2 for d in range(0, 10)]
 hash = simple_hasher(SECRET_KEY.join(sys.argv)) * easy_hasher(SECRET_KEY.join(sys.argv))
 
 if "--nopattern" in sys.argv:
-    allowed = [i for i in range(11000, 100000) if not repeats(i)]
-    print(allowed[hash % (99999 - 11000)])
+    allowed = [i for i in range(7700, 65536) if not repeats(i)]
+    print(len(allowed))
+    print(allowed[hash % len(allowed)])
     sys.exit(0)
 
-print(hash % (99999 - 11000) + 11000)
+print(hash % (65535 - 7700) + 7700)
